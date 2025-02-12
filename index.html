@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alpha Llama- Photo and Video </title>
+    <title>Alpha Llama - Photo and Video</title>
     <link rel="icon" type="image/png" href="image.png">
+    
+    <!-- Font Awesome (CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap');
@@ -39,17 +42,9 @@
         }
 
         @keyframes move-bg {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         /* 🔹 Logo */
@@ -66,15 +61,8 @@
         }
 
         @keyframes bounce {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
         /* 🔹 Texto con Efecto de Máquina de Escribir */
@@ -90,7 +78,6 @@
             font-size: 1.8em;
             margin: 10px 0;
             z-index: 10;
-
         }
 
         .typing {
@@ -98,6 +85,30 @@
             border-right: 3px solid white;
             white-space: nowrap;
             overflow: hidden;
+        }
+
+        /* 🔹 Iconos de Redes Sociales */
+        .social-icons {
+            margin-top: 20px;
+            z-index: 10;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 2em;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+            color: #30c5ff; /* Cambia el color al hacer hover */
+        }
+
+        .social-icons p {
+            font-size: 1em;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -114,6 +125,20 @@
     <!-- 🔥 Texto Animado -->
     <h1><span class="typing" id="text1"></span></h1>
     <p><span class="typing" id="text2"></span></p>
+
+    <!-- 🔥 Iconos de Redes Sociales -->
+    <div class="social-icons">
+        <p>Síguenos en nuestras redes:</p>
+        <a href="https://www.facebook.com/AlphaLlamaphotovideo/" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook"></i> <!-- Icono de Facebook -->
+        </a>
+        <a href="https://www.instagram.com/alpha_llama_photo_and_video/" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i> <!-- Icono de Instagram -->
+        </a>
+        <a href="https://wa.me/59171948121" target="_blank" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i> <!-- Icono de WhatsApp -->
+        </a>
+    </div>
 
     <script>
         const frases = [
