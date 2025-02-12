@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alpha Llama - Photo and Video</title>
     <link rel="icon" type="image/png" href="image.png">
-    
+
     <!-- Font Awesome (CDN) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-   
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap');
 
@@ -27,6 +27,7 @@
             margin: 0;
             overflow: hidden;
             position: relative;
+            padding: 20px;
         }
 
         /* 🔹 Fondo Animado */
@@ -42,9 +43,17 @@
         }
 
         @keyframes move-bg {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         /* 🔹 Logo */
@@ -57,59 +66,115 @@
 
         .logo {
             width: 150px;
+            max-width: 80%;
             animation: bounce 2s infinite ease-in-out;
         }
 
         @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         /* 🔹 Texto con Efecto de Máquina de Escribir */
-        h1 {
-            font-weight: 700;
-            font-size: 2.1em;
-            margin: 10px 0;
-            z-index: 10;
-        }
+        h1, p {
 
-        p {
-            font-weight: 500;
-            font-size: 1.8em;
-            margin: 10px 0;
-            z-index: 10;
+            max-width: 90%;
+            /* Limita el ancho del texto */
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            text-align: center;
         }
+            h1 {
+                font-weight: 700;
+                font-size: 2em;
+                margin: 10px 0;
+                z-index: 10;
+            }
 
-        .typing {
-            display: inline-block;
-            border-right: 3px solid white;
-            white-space: nowrap;
-            overflow: hidden;
-        }
+            p {
+                font-weight: 660;
+                font-size: 1.6em;
+                margin: 10px 0;
+                z-index: 10;
+                color: white;
+            }
 
-        /* 🔹 Iconos de Redes Sociales */
-        .social-icons {
-            margin-top: 20px;
-            z-index: 10;
-        }
+           
 
-        .social-icons a {
-            color: white;
-            font-size: 2em;
-            margin: 0 10px;
-            text-decoration: none;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
+            /* 🔹 Iconos de Redes Sociales */
+            .social-icons {
+                margin-top: 20px;
+                z-index: 10;
+                display: flex;
+                gap: 15px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
 
-        .social-icons a:hover {
-            transform: scale(1.2);
-            color: #30c5ff; /* Cambia el color al hacer hover */
-        }
+            .social-icons a {
+                color: white;
+                font-size: 1.8em;
+                text-decoration: none;
+                transition: transform 0.3s ease, color 0.3s ease;
+            }
 
-        .social-icons p {
-            font-size: 1em;
-            margin-bottom: 10px;
-        }
+            .social-icons a:hover {
+                transform: scale(1.2);
+                color: #30c5ff;
+                /* Cambia el color al hacer hover */
+            }
+
+            /* 🔹 RESPONSIVIDAD */
+            @media (max-width: 768px) {
+              
+
+                .logo {
+                    width: 120px;
+                }
+
+                .social-icons a {
+                    font-size: 1.5em;
+                }
+
+                h1 {
+                    font-size: 1.6em;
+                    max-width: 80%;
+                }
+
+                p {
+                    font-size: 1.2em;
+                    max-width: 80%;
+                }
+            }
+
+            @media (max-width: 480px) {
+                
+
+                .logo {
+                    width: 100px;
+                }
+
+                .social-icons a {
+                    font-size: 1.3em;
+                }
+
+                h1 {
+                    font-size: 1.3em;
+                    max-width: 90%;
+                }
+
+                p {
+                    font-size: 1em;
+                    max-width: 90%;
+                }
+            }
     </style>
 </head>
 
@@ -128,7 +193,6 @@
 
     <!-- 🔥 Iconos de Redes Sociales -->
     <div class="social-icons">
-        <p>Síguenos en nuestras redes:</p>
         <a href="https://www.facebook.com/AlphaLlamaphotovideo/" target="_blank" aria-label="Facebook">
             <i class="fab fa-facebook"></i> <!-- Icono de Facebook -->
         </a>
