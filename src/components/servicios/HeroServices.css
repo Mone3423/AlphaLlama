@@ -1,0 +1,62 @@
+.hero-services {
+  position: relative;
+  width: 98%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Ajuste para el título dinámico */
+.hero-content h1 {
+  font-size: 3rem; /* Aumentamos el tamaño */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Efecto de escritura */
+.typing-effect {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 3px solid rgb(14, 13, 13); /* Simula el cursor */
+  white-space: nowrap;
+  font-size: 1.5rem;
+  width: 0;
+  animation: typing 3s steps(30, end) forwards, blink 0.7s infinite;
+}
+
+/* Animación del efecto escritura */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Parpadeo del cursor */
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: rgb(234, 192, 192); }
+}
+
+/* Flecha animada */
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  background: none;
+  border: none;
+  color: rgb(88, 71, 71);
+  font-size: 2rem;
+  cursor: pointer;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}

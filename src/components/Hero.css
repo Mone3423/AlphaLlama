@@ -1,0 +1,183 @@
+/* Hero.css */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: visible;
+  min-height: 500px;
+  padding: 2rem;
+  
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #fff;
+  position: relative;
+  z-index: 3;
+}
+.hero-subtitle {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Nuevos estilos para DecryptedText */
+.decrypted-text-container {
+  margin-top: 4rem;
+  perspective: 800px;
+  position: relative;
+  z-index: 2;
+}
+
+.decrypted-text {
+  font-size: 1.8rem;
+  font-family: 'Courier New', monospace;
+  color: #c7cc2f;
+  text-shadow: 0 0 10px rgba(122, 189, 7, 0.5);
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+/* Animaciones */
+.reveal-animation {
+  animation: textReveal 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+@keyframes textReveal {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efecto de terminal */
+.decrypted-text::after {
+  content: '>';
+  position: absolute;
+  right: -1.5rem;
+  color: #a838c4;
+  animation: cursorBlink 1s infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* Ajustes para responsividad */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+  }
+  
+  .decrypted-text {
+    font-size: 1.2rem;
+    padding: 0.3rem 0.8rem;
+  }
+  
+  .decrypted-text-container {
+    margin-top: 2rem;
+  }
+}
+
+.video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.video-bg {
+  object-fit: cover;
+}
+.video-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  mix-blend-mode: multiply;
+}
+
+.interactive-content {
+  position: relative;
+  z-index: 2; /* Aseguramos que esté sobre el video */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; /* Permite interacción con elementos hijos */
+}
+
+.text-container {
+  width: 90%;
+  max-width: 1200px;
+  text-align: center;
+  pointer-events: auto;
+  /* Nuevas propiedades */
+  transform-style: preserve-3d;
+  will-change: transform;
+  margin: 0 auto;
+  padding: 40px; /* Espacio interno adicional */
+}
+
+.subtitle-wrapper {
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.highlighted {
+  color: #ff6b6b;
+  text-shadow: 
+    0 0 15px rgba(255, 107, 107, 0.7),
+    0 0 30px rgba(255, 107, 107, 0.4),
+    0 0 45px rgba(255, 107, 107, 0.2);
+  /* Mantener propiedades existentes y añadir: */
+  word-break: keep-all;
+  letter-spacing: 2px;
+  padding: 0 5px;
+}
+
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chevron {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-width: 2px 2px 0 0;
+  transform: rotate(135deg);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0; transform: rotate(135deg) translate(0, 0); }
+  50% { opacity: 1; transform: rotate(135deg) translate(10px, 10px); }
+  100% { opacity: 0; transform: rotate(135deg) translate(20px, 20px); }
+}

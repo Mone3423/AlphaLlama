@@ -1,0 +1,164 @@
+/* 🌎 Estilos Globales */
+body {
+  color: rgb(34, 32, 32);
+  line-height: 1.6;
+  background: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
+/* 📦 Contenedor Principal */
+.paquete-container {
+  text-align: center;
+  margin: 80px auto;
+  padding: 40px 20px;
+  max-width: 1200px;
+}
+
+/* 📝 Títulos y Textos */
+h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  letter-spacing: 0.5px;
+  color: #222;
+}
+
+p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+/* 🖼️ Galería Mejorada */
+.galeria {
+  height: 600px;
+  position: relative;
+  margin: 60px auto;
+  width: 90%;
+  max-width: 1400px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* 🎁 Opciones de Paquetes */
+.paquete-opciones {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin: 60px 0;
+}
+
+/* 🏷️ Tarjeta de Paquete */
+.paquete-card {
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  width: 370px;
+  gap: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.paquete-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* 🔵 Círculo de Precio */
+.paquete-circulo {
+  width: 140px;
+  height: 140px;
+  background: #ff6b6b;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+  transition: 0.3s ease;
+}
+
+.paquete-card:hover .paquete-circulo {
+  background: #ff5252;
+}
+
+.paquete-circulo h3 {
+  font-size: 20px;
+  margin: 0;
+  color: white;
+}
+
+.paquete-circulo p {
+  font-size: 16px;
+  margin: 8px 0 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* 📋 Lista de Beneficios */
+ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+
+ul li {
+  margin-bottom: 15px;
+  padding-left: 30px;
+  position: relative;
+  font-size: 18px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+ul li::before {
+  content: "◦";
+  color: #ff6b6b;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.paquete-card:hover ul li {
+  color: #ff6b6b;
+}
+
+/* 📱 Responsividad */
+@media (max-width: 768px) {
+  .paquete-container {
+    margin: 40px auto;
+    padding: 20px;
+  }
+  
+  .galeria {
+    height: 400px;
+    margin: 40px auto;
+  }
+  
+  .paquete-opciones {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .paquete-card {
+    width: 100%;
+    flex-direction: column;
+    padding: 25px;
+  }
+  
+  .paquete-circulo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+  }
+}
