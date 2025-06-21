@@ -4,7 +4,7 @@ import "./Community.css";
 const serviciosData = [
   {
     titulo: "Estrategias digitales",
-    descripcion: "Planeamos la mejor estrategia para que tu marca pueda sobresalir y brillar sobre la competencia.",
+    descripcion: "Construimos la mejor estrategia para que tu marca pueda sobresalir y brillar sobre la competencia.",
   },
   {
     titulo: "Community management",
